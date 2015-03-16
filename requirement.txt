@@ -1,0 +1,70 @@
+* manage involves all create, view, update, delete actions
+
+user type:
+	all
+		login
+		logout
+		
+	clerk (8)
+		create order
+		update order - change in amount/product, returned item
+		void order - order cancellation, removed from order assigned to driver
+		view invoice of an order - includes GST
+		view products
+		generate order's payment slip
+		
+	Collector (n)
+		view list of customers
+		view list of invoices
+		
+	Vehicle/driver (n)
+		view order assigned
+	
+	admin (1)
+		manage customers
+		manage company
+		manage products 
+		manage payment
+		manage clerk account
+		manage collector account
+		manage vehicle account
+		manage vehicle maintenance record
+		manage salesperson
+		view salesperson's commision report
+		view left out bill
+
+		
+admin (username, password, contact, line)
+clerk (username, password, contact, line)
+vehicle (username, password, contact, line)
+collector (username, password, contact, line)
+salesperson (name, contact, line)
+customer (name, address, contact, gst_id)
+company (customer_id, name, address, contact, email, gst_no, tax_invoice)
+product (name, description, price_kl, price_srbm, gst_applied)
+
+order (clerk_id, company_id, vehicle_id, order_date, due_date, total, gst_amount, order_status(voided,delivered), payment_status)
+order_product (order_id, product_id, quantity, price, remarks - for returning item notes)
+payment (order_id, amount, payment_date)
+vehicle_maintenance (vehicle_id, title, description, amount, create_date)
+salescommision (salesperson_id, order_id, commision)
+
+Assumption
+* any clerk can place order from any company	
+* Only one vehicle is assigned to deliver the items when order is placed
+* One invoice has only once order
+* 
+* 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
